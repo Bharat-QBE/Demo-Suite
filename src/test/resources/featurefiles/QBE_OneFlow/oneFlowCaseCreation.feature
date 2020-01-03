@@ -18,26 +18,25 @@ Feature: Case workflow management
     Examples: 
       | username | password  | keywordinsubject | policyorquotenoinsubject |
       | triager  | OF@123456 | QI 1234567 MVA   | QI 1234567 PLB           |
-	  # | triager  | OF@123456 | QI 1234567 PAD   | QI 1234567 PLB           |
-    # | triager  | OF@123456 | QI 1234567 ISR   | QI 1234567 PLB           |
- 
+		# | triager  | OF@123456 | QI 1234567 PAD   | QI 1234567 PLB           |
+  	# | triager  | OF@123456 | QI 1234567 ISR   | QI 1234567 PLB           |
+  
   #Author: baburao.lunavath@qbe.com
   #Sprint 2 and Sprint 3
   #Test case coverage || Total TC's - 23 || Total automated TC's - 23
   @smoke
   Scenario Outline: Information Note verification for complex or exception workbasket
     Given Open the browser and navigate to particular url
+    Given User send a mail to QBE with subject "<keywordinsubject>" and "<policyorquotenoinsubject>"
     When I enter valid username  "<username>" and "<password>" click on Login button
     Then Login should be successfully completed
-    When verify cases routing to complex workbasket
-    When click on case when user navigate to list of cases screen
-    Then verify information note available at top of the page
+    Then Open the case and verify the case is routed to exception work basket with "<keywordinsubject>" and "<policyorquotenoinsubject>"
     When verify information note for ExceptionWB cases
     Then click on logout link and close the browser
 
     Examples: 
-      | username | password  |
-      | triager  | OF@123456 |
+      | keywordinsubject | policyorquotenoinsubject | username | password  |
+      | QI ABCDEFG ABC   | QI 1234567 ABC           | triager  | OF@123456 |
 
   #Author Bharat Bhushan
   #Sprint 1 Sprint 3
@@ -89,9 +88,8 @@ Feature: Case workflow management
     Examples: 
       | keywordinsubject | policyorquotenoinsubject | expectedrequesttype | type   | priority |
       | closing check    | 30-A611814-MVA           | Closing Check       | Policy |       30 |
- #    | loss history     | Q-12345678-PAD           | Claims Experience   | Quote  |          |
 
-
+  #    | loss history     | Q-12345678-PAD           | Claims Experience   | Quote  |          |
   #Sprint 2 and Sprint 3
   #Test case coverage || Total TC's - 11 || Total automated TC's - 11
   @smoke
@@ -105,5 +103,3 @@ Feature: Case workflow management
     Examples: 
       | username | password  |
       | triager  | OF@123456 |
-
-

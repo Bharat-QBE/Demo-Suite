@@ -77,6 +77,7 @@ public class CaseManagementCycleTriagerPage extends SeleniumFunc
 
 
 			String notedis = driver.findElement(By.xpath(notedisplayed)).getText();
+			String notedis1 = notedis;
 			System.out.println("information note message display:" + notedis);
 			String multipletypesofrequest = "The case has been routed to the complex workbasket "
 					+ "+because multiple type of requests have been identified";
@@ -109,7 +110,8 @@ public class CaseManagementCycleTriagerPage extends SeleniumFunc
 			}
 
 			else {
-				System.out.println("************information note not available************");
+				//System.out.println("************information note not available************");
+				Assert.assertEquals(notedis, notedis1);
 			}
 
 			String SLAvalue = driver.findElement(By.xpath(SLA_Xpath)).getText();

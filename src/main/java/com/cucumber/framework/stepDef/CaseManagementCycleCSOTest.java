@@ -154,7 +154,7 @@ public class CaseManagementCycleCSOTest {
 	public void click_on_Transaction_Request_button() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 		caseManagementCycleCSOPage.ClickOnTransactionRequest();
-		Thread.sleep(10000);
+		Thread.sleep(30000);
 	}
 
 	@Then("Capture request details screen is displayed")

@@ -77,9 +77,7 @@ public class CommonPage extends SeleniumFunc implements CaseManagementCycleCSOPa
 			throws Exception {
 		driver.switchTo().defaultContent();
 		// click on exception WB
-		waitFor(3);
-		xpath_GenericMethod_Click(xpath);
-		waitFor(2);
+		waitFor(5);
 		List<WebElement> list_of_cases = driver.findElements(By.xpath(case_list));
 		int total_cases = list_of_cases.size();
 		System.out.println("total list of cases:" + total_cases);

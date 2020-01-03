@@ -545,13 +545,13 @@ public class CaseManagementCycleCSOPage extends SeleniumFunc
 
 	public void SubmitManaulCreatedCase() {
 
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 
 			WebElement submit = driver.findElement(By.xpath(Submit_button));
 
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", submit);
-			waitFor(15);
+			waitFor(35);
 		}
 	}
 
