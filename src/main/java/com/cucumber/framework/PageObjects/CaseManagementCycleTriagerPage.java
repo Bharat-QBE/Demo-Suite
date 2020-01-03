@@ -274,8 +274,9 @@ public class CaseManagementCycleTriagerPage extends SeleniumFunc
 	 * #############################################################################
 	 */
 
-	public static void forwardEmail() throws Exception {
+	public void forwardEmail() throws Exception {
 		
+			waitFor(20);
 			xpath_GenericMethod_Click(actions_xpath);
 			Thread.sleep(2000);
 			xpath_GenericMethod_Click(forwardEmail_xpath);

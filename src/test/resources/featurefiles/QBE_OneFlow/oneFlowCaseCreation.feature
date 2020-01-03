@@ -21,23 +21,7 @@ Feature: Case workflow management
 		# | triager  | OF@123456 | QI 1234567 PAD   | QI 1234567 PLB           |
   	# | triager  | OF@123456 | QI 1234567 ISR   | QI 1234567 PLB           |
   
-  #Author: baburao.lunavath@qbe.com
-  #Sprint 2 and Sprint 3
-  #Test case coverage || Total TC's - 23 || Total automated TC's - 23
-  @smoke
-  Scenario Outline: Information Note verification for complex or exception workbasket
-    Given Open the browser and navigate to particular url
-    Given User send a mail to QBE with subject "<keywordinsubject>" and "<policyorquotenoinsubject>"
-    When I enter valid username  "<username>" and "<password>" click on Login button
-    Then Login should be successfully completed
-    Then Open the case and verify the case is routed to exception work basket with "<keywordinsubject>" and "<policyorquotenoinsubject>"
-    When verify information note for ExceptionWB cases
-    Then click on logout link and close the browser
-
-    Examples: 
-      | keywordinsubject | policyorquotenoinsubject | username | password  |
-      | QI ABCDEFG ABC   | QI 1234567 ABC           | triager  | OF@123456 |
-
+  
   #Author Bharat Bhushan
   #Sprint 1 Sprint 3
   #Test case coverage || Total TC's - 59 || Total automated TC's - 47
