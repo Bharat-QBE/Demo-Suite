@@ -72,18 +72,22 @@ Feature: Case workflow management
     Examples: 
       | keywordinsubject | policyorquotenoinsubject | expectedrequesttype | type   | priority |
       | closing check    | 30-A611814-MVA           | Closing Check       | Policy |       30 |
-
-  #    | loss history     | Q-12345678-PAD           | Claims Experience   | Quote  |          |
+ #    | loss history     | Q-12345678-PAD           | Claims Experience   | Quote  |          |
+ 
+  
+  
   #Sprint 2 and Sprint 3
   #Test case coverage || Total TC's - 11 || Total automated TC's - 11
   @smoke
   Scenario Outline: Forward mail scenario varification
     Given Open the browser and navigate to particular url
+    Given User send a mail to QBE with subject "<keywordinsubject>" and "<policyorquotenoinsubject>"
     When I enter valid username  "<username>" and "<password>" click on Login button
     Then Login should be successfully completed
+    Then Open the case and verify the case is routed to exception work basket with "<keywordinsubject>" and "<policyorquotenoinsubject>"
     When validate forward mail
     Then click on logout link and close the browser
 
     Examples: 
-      | username | password  |
-      | triager  | OF@123456 |
+      | keywordinsubject | policyorquotenoinsubject | username | password  |
+      | QI ABCDEFG ABC   | QI 1234567 ABC           | triager  | OF@123456 |

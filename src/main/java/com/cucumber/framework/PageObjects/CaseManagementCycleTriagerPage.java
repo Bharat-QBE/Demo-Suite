@@ -311,7 +311,7 @@ public class CaseManagementCycleTriagerPage extends SeleniumFunc
 			xpath_GenericMethod_Click(refreshaction);
 			Thread.sleep(4000);
 			xpath_GenericMethod_Click(audit);
-			
+			waitFor(25000);
 			String mailforward = driver.findElement(By.xpath("//span[starts-with(text(),'The case has been forwarded')]")).getText();
 			String forwardmailaudit = mailforward;
 			System.out.println(mailforward);
